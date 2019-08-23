@@ -12,7 +12,7 @@
   <title>@yield('title', 'LaraBBs') - Laravel 进阶教程</title>
 
   <!-- Styles -->
-  <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+  <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 
 </head>
 
