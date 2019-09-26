@@ -35,6 +35,7 @@
             {{ $topic->created_at->diffForHumans() }}
             ⋅
             <i class="far fa-comment"></i>
+            {{ $topic->reply_count }}
           </div>
 
           <div class="topic-body mt-4 mb-4">
@@ -59,6 +60,15 @@
 
         </div>
       </div>
+
+      {{-- 用户回复列表 --}}
+      <div class="card topic-reply mt-4">
+        <div class="card-body">
+          @include('topics._reply_box', ['topic' => $topic])
+          @include('topics._reply_list', ['replies' => $topic->replies()->with('user')->get()])
+        </div>
+      </div>
+
     </div>
   </div>
 @stop
