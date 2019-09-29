@@ -36,7 +36,9 @@ return array(
      */
     'menu' => [
         '用户权限' => [
-            'users'
+            'users',
+            'roles',
+            'permissions',
         ]
     ],
 
