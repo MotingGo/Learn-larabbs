@@ -38,7 +38,9 @@
             </a>
           </li>
           <li class="nav-item notification-badge">
-            <a class="nav-link mr-3 badge badge-pill badge-{{ Auth::user()->notification_count > 0 ? 'hint' : 'secondray' }} text-white" href="{{ route('notifications.index') }}">
+            <a
+              class="nav-link mr-3 badge badge-pill badge-{{ Auth::user()->notification_count > 0 ? 'hint' : 'secondray' }} text-white"
+              href="{{ route('notifications.index') }}">
               {{ Auth::user()->notification_count }}
             </a>
           </li>
@@ -50,10 +52,17 @@
               {{ Auth::user()->name }}
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="{{ route('users.show', Auth::id()) }}">
-                <i class="far fa-user mr-2"></i>
-                个人中心
-              </a>
+              @can('manage_contents')
+                <a class="dropdown-item" href="{{ url(config('administrator.uri')) }}">
+                  <i class="fas fa-tachometer-alt mr-2"></i>
+                  管理后台
+                </a>
+                <div class="dropdown-divider"></div>
+              @endcan
+                <a class="dropdown-item" href="{{ route('users.show', Auth::id()) }}">
+                  <i class="far fa-user mr-2"></i>
+                  个人中心
+                </a>
               <a class="dropdown-item" href="{{ route('users.edit', Auth::id()) }}">
                 <i class="far fa-edit mr-2"></i>
                 编辑材料
