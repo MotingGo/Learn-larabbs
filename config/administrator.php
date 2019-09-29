@@ -9,7 +9,7 @@ return array(
     'domain' => '',
 
     // 应用名称，在页面标题和左上角站点名称处显示
-    'title' => config('app.name'),
+    'title' => env('APP_NAME', 'Laravel'),
 
     // 模型配置信息文件存放目录
     'model_config_path' => config_path('administrator'),
@@ -48,7 +48,7 @@ return array(
      */
     'permission' => function () {
         // 只要是能管理内容的用户，就允许访问后台
-        return Auth::check() && Auth::user()->can('manager_contents');
+        return Auth::check() && Auth::user()->can('manage_contents');
     },
 
     /*
@@ -63,7 +63,7 @@ return array(
     'dashboard_view' => '',
 
     // 用来作为后台主页的菜单条目，由 `use_dashboard` 选项决定，菜单指的是 `menu` 选项
-    'home_page' => '',
+    'home_page' => 'users',
 
     // 右上角『返回主站』 按钮的链接
     'back_to_site_path' => '/',
@@ -82,5 +82,5 @@ return array(
     // 可选的语言，如果不为空，将会在页面顶部显示『选择语言』按钮
     'locales' => [],
 
-    'custom_routes_file' => app_path('Http/routes/administrator.php'),
+    // 'custom_routes_file' => app_path('Http/routes/administrator.php'),
 );
