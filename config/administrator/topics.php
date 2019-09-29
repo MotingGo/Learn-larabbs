@@ -1,9 +1,11 @@
 <?php
 
+use App\Models\Topic;
+
 return [
-    'title' => '',
-    'single' => '',
-    'model' => '',
+    'title' => '话题',
+    'single' => '话题',
+    'model' => Topic::class,
     'columns' => [
         'id' => [
             'title' => 'ID',

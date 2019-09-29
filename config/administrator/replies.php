@@ -67,7 +67,7 @@ return [
     ],
     'filters' => [
         'user' => [
-            'title' => '',
+            'title' => '用户',
             'type' => 'relationship',
             'name_field' => 'name',
             'autocomplete' => true,
