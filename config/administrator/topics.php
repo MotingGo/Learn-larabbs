@@ -90,7 +90,7 @@ return [
         'title' => 'required',
     ],
     'messages' => [
-        'title.required' => '请填写标题',
+        'taitle.required' => '请填写标题',
     ],
 
 ];
