@@ -25,7 +25,7 @@ class AddReferences extends Migration
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 
             // 当 topic_id 对应的 topics 表数据被删除时，删除此条数据
-            $table->foreign('topic_id')->references('id')->on('topics')->onDelete('csacade');
+            $table->foreign('topic_id')->references('id')->on('topics')->onDelete('cascade');
         });
     }
 
