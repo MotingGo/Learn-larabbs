@@ -7,11 +7,11 @@ return [
     // 默认发送匹配置
     'default' => [
         // 网关调用策略,默认:顺序调用
-        'strategy' => \OverTrue\EasySms\Strategies\OrderStrategy::class,
+        // 'strategy' => \OverTrue\EasySms\Strategies\OrderStrategy::class,
 
         // 默认可用的发送网关
         'gateways' => [
-            'yunpian',
+            'feige'
         ],
     ],
     // 可以的网关配置
@@ -21,6 +21,12 @@ return [
         ],
         'yunpian' => [
             'api_key' => env('YUNPIAN_API_KEY')
+        ],
+        'feige' => [
+            'account' => env('FEIGE_ACCOUNT'),
+            'pwd' => env('FEIGE_PASSWORD'),
+            'sign_id' => env('FEIGE_SIGN_ID'),
+            'verification_code' => env('FEIGE_TEMPLATE__VERIFICATION_CODE'),
         ],
     ],
 ];

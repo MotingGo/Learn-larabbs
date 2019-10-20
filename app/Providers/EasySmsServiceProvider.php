@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Gateways\FeiGeSMSGateway;
 use Illuminate\Support\ServiceProvider;
 use Overtrue\EasySms\EasySms;
 
@@ -15,7 +16,14 @@ class EasySmsServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->singleton(EasySms::class, function ($app) {
-            return new EasySms(config('easysms'));
+
+            $easySms = new EasySms(config('easysms'));
+
+            $easySms->extend('feige', function ($gatewayConfig) {
+                return new FeiGeSMSGateway($gatewayConfig);
+            });
+
+            return $easySms;
         });
 
         $this->app->alias(Easysms::class, 'easysms');
