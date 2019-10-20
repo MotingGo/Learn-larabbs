@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "336284208184e11aab1c1d8bf09c221c",
+    "content-hash": "9d3c9bcb8f927fcad5cf5496b0a70f4a",
     "packages": [
         {
             "name": "cakephp/chronos",
@@ -2251,6 +2251,47 @@
                 "psr-3"
             ],
             "time": "2018-11-05T09:00:11+00:00"
+        },
+        {
+            "name": "motinggo/easy_sms_gateway_feige",
+            "version": "0.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/MotingGo/easy_sms_gateway_feige.git",
+                "reference": "8c1a6966d234e3705594710912d81c8ef1edfc54"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/MotingGo/easy_sms_gateway_feige/zipball/8c1a6966d234e3705594710912d81c8ef1edfc54",
+                "reference": "8c1a6966d234e3705594710912d81c8ef1edfc54",
+                "shasum": "",
+                "mirrors": [
+                    {
+                        "url": "https://mirrors.aliyun.com/composer/dists/%package%/%reference%.%type%",
+                        "preferred": true
+                    }
+                ]
+            },
+            "require": {
+                "overtrue/easy-sms": "^1.1"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MotingGo\\EasySms\\Gateway\\": "./src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "moting",
+                    "email": "motingphp@gmail.com"
+                }
+            ],
+            "time": "2019-10-20T16:22:38+00:00"
         },
         {
             "name": "nesbot/carbon",

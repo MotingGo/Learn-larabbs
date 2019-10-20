@@ -20,7 +20,7 @@ class EasySmsServiceProvider extends ServiceProvider
             $easySms = new EasySms(config('easysms'));
 
             $easySms->extend('feige', function ($gatewayConfig) {
-                return new FeiGeSMSGateway($gatewayConfig);
+                return new \MotingGo\EasySms\Gateway\FeiGeSMSGateway($gatewayConfig);
             });
 
             return $easySms;
