@@ -49,6 +49,7 @@ class User extends Authenticatable implements MustVerifyEmailContract
      */
     protected $fillable = [
         'name', 'email', 'password', 'introduction', 'avatar',
+        'weixin_openid', 'weixin_unionid',
     ];
 
     /**
