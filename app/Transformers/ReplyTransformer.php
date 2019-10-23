@@ -6,7 +6,7 @@ use App\Models\Reply;
 use League\Fractal\TransformerAbstract;
 
 class ReplyTransformer extends TransformerAbstract
-{R
+{
     protected $availableIncludes = ['user', 'topic'];
 
     public function transform(Reply $reply)
