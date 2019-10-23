@@ -6,7 +6,7 @@ use App\Models\Image;
 use App\Models\User;
 use App\Transformers\UserTransformer;
 use Illuminate\Http\Request;
-use App\Http\Requests\UserRequest;
+use App\Http\Requests\Api\UserRequest;
 use Illuminate\Support\Facades\Auth;
 
 class UsersController extends Controller
