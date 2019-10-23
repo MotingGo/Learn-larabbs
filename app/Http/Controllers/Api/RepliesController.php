@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Http\Requests\Request;
 use App\Models\Topic;
 use App\Models\Reply;
+use App\Models\User;
 use App\Transformers\ReplyTransformer;
 use App\Http\Requests\Api\ReplyRequest;
 
@@ -19,9 +21,28 @@ class RepliesController extends Controller
         return $this->response->item($reply, new ReplyTransformer())->setStatusCode(201);
     }
 
-    public function index(Topic $topic)
+    public function index(Topic $topic, Request $request)
     {
+        app(\Dingo\Api\Transformer\Factory::class)->disableEagerLoading();
+
         $replies = $topic->replies()->paginate(20);
+
+        if ($request->include) {
+            $replies->load(explode(',', $request->include));
+        }
+
+        return $this->response->paginator($replies, new ReplyTransformer());
+    }
+
+    public function userIndex(User $user, Request $request)
+    {
+        app(\Dingo\Api\Transformer\Factory::class)->disableEagerLoading();
+
+        $replies = $user->replies()->paginate(20);
+
+        if ($request->include) {
+            $replies->load(explode(',', $request->include));
+        }
 
         return $this->response->paginator($replies, new ReplyTransformer());
     }
